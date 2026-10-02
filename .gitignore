@@ -1,0 +1,18 @@
+# Ambiente virtual Python
+venv/
+.venv/
+
+# Cache do Python
+__pycache__/
+*.pyc
+
+# Bancos SQLite locais (regeneráveis via scripts/servidor_api.py e scripts/extracao.py)
+banco_dados/*.db
+!banco_dados/.gitkeep
+
+# Meus exercícios/rascunhos pessoais, não publicados
+sql/meus_exercicios_privados.sql
+
+# Editor / SO
+.vscode/
+Thumbs.db
