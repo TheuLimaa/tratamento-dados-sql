@@ -21,7 +21,13 @@ def gerar_grafico() -> None:
     df = pd.read_sql("SELECT * FROM vw_eficiencia_caminhao", conexao)
     conexao.close()
 
-    # TODO: montar o grafico (ex.: plt.bar(df["placa"], df["km_por_litro"]))
+    plt.bar(df["placa"], df["km_por_litro"])
+    plt.title("Eficiência por caminhão (km rodado por litro abastecido)")
+    plt.xlabel("Placa do caminhão")
+    plt.ylabel("km por litro")
+    plt.tight_layout()
+
+
 
     CAMINHO_SAIDA.parent.mkdir(parents=True, exist_ok=True)
     plt.savefig(CAMINHO_SAIDA)
