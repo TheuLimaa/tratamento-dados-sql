@@ -1,4 +1,9 @@
 -- ============================================================================
+-- Tratamento e KPIs do abastecimento
+-- Roda inteiro, depois de cada extração. Recria a tabela e as views.
+-- Exploração e decisões: ver sql/abastecimento.sql
+-- ============================================================================
+--
 -- Tratamento em SQL sobre a tabela "abastecimento_bruto", dentro de
 -- banco_dados/copia.db
 --

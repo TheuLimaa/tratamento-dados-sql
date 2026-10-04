@@ -6,12 +6,20 @@ venv/
 __pycache__/
 *.pyc
 
-# Bancos SQLite locais (regeneráveis via scripts/servidor_api.py e scripts/extracao.py)
+# Bancos SQLite locais (regeneráveis via simulador/servidor_api.py e extracao/buscar_dados.py)
 banco_dados/*.db
 !banco_dados/.gitkeep
 
 # Meus exercícios/rascunhos pessoais, não publicados
 sql/meus_exercicios_privados.sql
+
+# Segredos de verdade (o .env.example fica, o .env real não)
+segredos/.env
+
+# Logs de execução (gerados a cada rodada, não precisam ser versionados)
+logs/*.log
+logs/ultima_execucao.txt
+!logs/.gitkeep
 
 # Editor / SO
 .vscode/

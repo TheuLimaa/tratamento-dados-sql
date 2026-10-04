@@ -1,0 +1,29 @@
+COMO RODAR ESSE PROJETO (guia rapido)
+
+1. pip install -r requirements.txt
+
+2. Simular a API (deixar rodando num terminal):
+   python simulador/servidor_api.py
+
+3. Em outro terminal, rodar a extracao:
+   python extracao/buscar_dados.py
+
+4. Abrir banco_dados/copia.db (extensao SQLite Viewer do VS Code) e rodar as
+   consultas de sql/tratamento_abastecimento.sql
+
+5. (ainda nao pronto) gerar grafico: python graficos/kpi_abastecimento.py
+6. (ainda nao pronto) enviar e-mail: python envio/email_kpi_abastecimento.py
+7. (ainda nao pronto) rotina completa: rodar_semanal.bat
+
+ESTRUTURA DAS PASTAS
+- simulador/     -> so existe aqui no estudo, simula a API remota
+- consultas_api/ -> copia de referencia das consultas mandadas pra API
+- extracao/      -> script que busca o dado e salva bruto
+- sql/           -> exploracao (abastecimento.sql) e tratamento/views final
+                    (tratamento_abastecimento.sql)
+- docs/          -> dicionario de dados, tabelas/views existentes
+- graficos/      -> gera os graficos dos KPIs
+- envio/         -> monta e manda o e-mail
+- segredos/      -> credenciais (.env, nunca commitado)
+- logs/          -> log de execucao da rotina semanal
+- saidas/        -> graficos/arquivos gerados
