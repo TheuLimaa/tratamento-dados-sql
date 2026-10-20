@@ -94,9 +94,9 @@ order by quantidade_litros Desc;
 --    usou antes (em sql/meus_exercicios_privados.sql).
 SELECT
     c.motorista,
-    ROUND(SUM(a.valor), 2) AS valor_total,
+    ROUND(SUM(t1.valor), 2) AS valor_total,
     Sum(t1.km_rodado) * 1.0/ sum(t1.quantidade_litros)
-FROM abastecimento_bruto a
-JOIN caminhoes_bruto c ON a.placa = c.placa
+FROM abastecimento_bruto t1
+JOIN caminhoes_bruto c ON t1.placa = c.placa
 GROUP BY c.motorista
 ORDER BY valor_total DESC;
