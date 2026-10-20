@@ -75,9 +75,34 @@ def criar_dados_ficticios():
         """,
         linhas,
     )
+
+    # Tabela de cadastro dos caminhões (dimensão) -- pra praticar JOIN de
+    # verdade com a tabela de abastecimento (fato), usando "placa" como chave.
+    conexao.execute(
+        """
+        CREATE TABLE caminhoes (
+            placa TEXT PRIMARY KEY,
+            modelo TEXT,
+            ano_fabricacao INTEGER,
+            motorista TEXT
+        )
+        """
+    )
+    caminhoes = [
+        ("ABC1D23", "Volvo FH 540", 2021, "Carlos Souza"),
+        ("XYZ9E88", "Scania R450", 2019, "Marcos Lima"),
+        ("QWE4R56", "Mercedes Actros", 2022, "Carlos Souza"),
+        ("LMN7P12", "Volvo FH 540", 2020, "Fernanda Alves"),
+        ("RST8X90", "Iveco Tector", 2023, "Paulo Rocha"),  # caminhao novo, ainda sem nenhum abastecimento
+    ]
+    conexao.executemany(
+        "INSERT INTO caminhoes (placa, modelo, ano_fabricacao, motorista) VALUES (?, ?, ?, ?)",
+        caminhoes,
+    )
+
     conexao.commit()
     conexao.close()
-    print(f"Banco ficticio criado em {CAMINHO_FONTE} com {len(linhas)} linhas.")
+    print(f"Banco ficticio criado em {CAMINHO_FONTE} com {len(linhas)} linhas de abastecimento e {len(caminhoes)} caminhoes.")
 
 
 @app.route("/query", methods=["POST"])

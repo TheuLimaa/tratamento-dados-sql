@@ -1,6 +1,6 @@
 # Progresso do projeto
 
-Última atualização: 2026-10-04
+Última atualização: 2026-10-18
 
 ## O que já fiz
 
@@ -29,17 +29,28 @@
 - [x] Mantenho um arquivo local `sql/meus_exercicios_privados.sql` (não vai pro
       Git, está no `.gitignore`) com os desafios que ainda preciso resolver
 
+- [x] Resolvi os 4 desafios de SQL numa tabela só (trimestre, eficiência por
+      caminhão, diferença percentual entre dois caminhões, criar a
+      `vw_eficiencia_caminhao`) — tudo em `sql/meus_exercicios_privados.sql`
+- [x] Como estou com dificuldade de JOIN no trabalho (onde tem muitas tabelas
+      de verdade), adicionei uma segunda tabela fictícia, `caminhoes`
+      (cadastro: placa, modelo, ano, motorista), e um arquivo novo de prática,
+      `sql/join_caminhoes.sql`, com JOIN de verdade entre duas tabelas (até
+      agora eu só tinha praticado self-join). Tem um caminhão (`RST8X90`) sem
+      nenhum abastecimento, de propósito, pra ver a diferença entre
+      `INNER JOIN` e `LEFT JOIN` na prática.
+
 ## Próximo passo
 
-Os desafios que estou praticando (ver `sql/meus_exercicios_privados.sql`):
+Resolver os desafios 3 a 6 de `sql/join_caminhoes.sql`:
 
-1. Valor total de abastecimento num trimestre específico
-2. Eficiência (km/litro) por caminhão
-3. Diferença percentual de eficiência entre dois caminhões
-4. Criar uma VIEW com a eficiência por caminhão (`vw_eficiencia_caminhao`)
+3. Gasto médio por abastecimento, agrupado por modelo de caminhão
+4. `LEFT JOIN` — listar todos os caminhões (mesmo sem abastecimento) com a contagem
+5. Comparar o resultado do 4 com um JOIN comum, e entender o que sumiu
+6. Desafio livre: motorista com a maior eficiência média (km/litro)
 
-Depois de resolver o 4, dá pra destravar `graficos/kpi_abastecimento.py` (ele já
-espera essa view pelo nome).
+Depois de terminar isso, volta a fazer sentido destravar
+`graficos/kpi_abastecimento.py` (ele já espera a `vw_eficiencia_caminhao`).
 
 ## Como retomar
 
