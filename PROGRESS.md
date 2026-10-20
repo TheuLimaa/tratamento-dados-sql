@@ -1,6 +1,6 @@
 # Progresso do projeto
 
-Última atualização: 2026-10-18
+Última atualização: 2026-10-19
 
 ## O que já fiz
 
@@ -32,25 +32,30 @@
 - [x] Resolvi os 4 desafios de SQL numa tabela só (trimestre, eficiência por
       caminhão, diferença percentual entre dois caminhões, criar a
       `vw_eficiencia_caminhao`) — tudo em `sql/meus_exercicios_privados.sql`
-- [x] Como estou com dificuldade de JOIN no trabalho (onde tem muitas tabelas
+- [x] Como estava com dificuldade de JOIN no trabalho (onde tem muitas tabelas
       de verdade), adicionei uma segunda tabela fictícia, `caminhoes`
       (cadastro: placa, modelo, ano, motorista), e um arquivo novo de prática,
       `sql/join_caminhoes.sql`, com JOIN de verdade entre duas tabelas (até
       agora eu só tinha praticado self-join). Tem um caminhão (`RST8X90`) sem
       nenhum abastecimento, de propósito, pra ver a diferença entre
       `INNER JOIN` e `LEFT JOIN` na prática.
+- [x] Resolvi os desafios 3 a 6 de `sql/join_caminhoes.sql` (JOIN com AVG,
+      LEFT JOIN vs JOIN comum, e cálculo de eficiência por motorista), senti mais
+      facilidade depois de algumas semanas com o trabalho e hoje consigo fazer
+      junções com mais facilidade.
+- [x] Rodei o `graficos/kpi_abastecimento.py` e gerei o primeiro gráfico de
+      verdade do projeto
+- [x] Experimentei gráfico 3D no matplotlib (`graficos/exploracao_3d.py`):
+      um scatter 3D e um bar3d. Aprendi que 3D é difícil de ler e por isso é
+      pouco usado na prática — mas valeu pra treinar `projection="3d"`,
+      `ax.bar3d`, `set_xticks`/`set_xticklabels`
+
 
 ## Próximo passo
 
-Resolver os desafios 3 a 6 de `sql/join_caminhoes.sql`:
+Destravar `envio/outlook.py` e `envio/email_kpi_abastecimento.py` — mandar o
+gráfico de eficiência por e-mail automaticamente.
 
-3. Gasto médio por abastecimento, agrupado por modelo de caminhão
-4. `LEFT JOIN` — listar todos os caminhões (mesmo sem abastecimento) com a contagem
-5. Comparar o resultado do 4 com um JOIN comum, e entender o que sumiu
-6. Desafio livre: motorista com a maior eficiência média (km/litro)
-
-Depois de terminar isso, volta a fazer sentido destravar
-`graficos/kpi_abastecimento.py` (ele já espera a `vw_eficiencia_caminhao`).
 
 ## Como retomar
 
@@ -70,3 +75,4 @@ python extracao/buscar_dados.py
   privados, e `segredos/.env` de verdade (só o `.env.example` fica).
 - Dados 100% fictícios — nunca uso dado ou estrutura real da empresa aqui, mesmo
   quando copio o *padrão de organização* do que uso no trabalho.
+
