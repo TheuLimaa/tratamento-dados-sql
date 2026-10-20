@@ -95,7 +95,7 @@ order by quantidade_litros Desc;
 SELECT
     c.motorista,
     ROUND(SUM(t1.valor), 2) AS valor_total,
-    Sum(t1.km_rodado) * 1.0/ sum(t1.quantidade_litros) as qtnd_litros_porKM
+    Sum(t1.km_rodado) * 1.0/ sum(t1.quantidade_litros) as km_por_litro
 FROM abastecimento_bruto t1
 JOIN caminhoes_bruto c ON t1.placa = c.placa
 GROUP BY c.motorista
