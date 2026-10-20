@@ -58,7 +58,10 @@ def gerar_grafico_barras_3d() -> None:
     
     ax.set_zlabel("Km por litro")
     ax.set_title("Eficiência por caminhão (km por litro)")
-    
+
+    plt.savefig(RAIZ / "saidas" / "grafico_3d_barras.png")
+    plt.show()
+
     plt.show()
 
 
