@@ -1,6 +1,6 @@
 # Progresso do projeto
 
-Última atualização: 2026-10-19
+Última atualização: 2026-10-21
 
 ## O que já fiz
 
@@ -49,12 +49,19 @@
       um scatter 3D e um bar3d. Aprendi que 3D é difícil de ler e por isso é
       pouco usado na prática — mas valeu pra treinar `projection="3d"`,
       `ax.bar3d`, `set_xticks`/`set_xticklabels`
-
+- [x] Criei `sql/having_subconsultas.sql` para consolidar minha base (filtra    
+      grupo
+      depois do GROUP BY, diferente do WHERE), subconsulta (consulta dentro
+      de outra, pra comparar com um valor calculado) e CASE WHEN (o
+      if/elif/else do SQL). Resolvi os desafios 1, 2, 3, 4 e 5; o 6 (combinar
+      HAVING com AND e COUNT DISTINCT) 
 
 ## Próximo passo
 
-Destravar `envio/outlook.py` e `envio/email_kpi_abastecimento.py` — mandar o
-gráfico de eficiência por e-mail automaticamente.
+Terminar o desafio 6 de `sql/having_subconsultas.sql` (HAVING com duas
+condições + COUNT DISTINCT).Continuar consolidando minha base em SQL.
+Depois, destravar `envio/outlook.py` e `envio/email_kpi_abastecimento.py`.
+
 
 
 ## Como retomar
